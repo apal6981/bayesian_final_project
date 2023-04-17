@@ -459,7 +459,7 @@ multi_cpp = np.genfromtxt("execution_times_multinomial.csv",delimiter=',')
 sys_cpp = np.genfromtxt("execution_times_systematic.csv",delimiter=",")
 print(multi_cpp[:,1])
 
-fig, ax = plt.subplots(2,1,figsize=(4,12))
+fig, ax = plt.subplots(2,1,figsize=(8,12))
 # plt.figure()
 ax[0].plot(particle_lst,multi_np_times,label="numpy")
 ax[0].plot(particle_lst,multi_numba_times,label="numba")
