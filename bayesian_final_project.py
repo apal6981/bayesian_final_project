@@ -382,6 +382,7 @@ for n_part in particle_lst:
 
     print("multi jax")
     elapsed_time=0
+    (multinomial_resampling_jax(particles_jax,weights_jax,key)).block_until_ready()
     for i in range(num_iters):
         start_time = time.time()
         stuff = (multinomial_resampling_jax(particles_jax,weights_jax,key)).block_until_ready()
@@ -420,6 +421,7 @@ for n_part in particle_lst:
 
     print("sys jax")
     elapsed_time = 0
+    systematic_resampling_jax(weights_jax,key).block_until_ready()
     for i in range(num_iters):
         start_time = time.time()
         stuff = systematic_resampling_jax(weights_jax,key).block_until_ready()
